@@ -1,0 +1,44 @@
+link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+link(rel="stylesheet" href="view/app.css")
+
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+
+div.container
+    if flash
+        div.alert.alert-success= flash
+    form(id="form" method="POST")
+        div.input-group
+            span.input-group-addon Naam
+            input.form-control(type="text" name="name")
+        div.input-group
+            span.input-group-addon Wachtwoord
+            input.form-control(type="password" name="password")
+        div.input-group.height-80px
+            span.input-group-addon Bericht
+            if msg
+                textarea.form-control.height-80px(id="msgbox" name="msg" form="form")= msg
+            else
+                textarea.form-control.height-80px(id="msgbox" name="msg" form="form")
+
+        div.input-group
+            if (msg)
+                input.form-control(id="submit-btn" type="submit" value="Bericht versturen" class="btn btn-danger")
+            else
+                input.form-control(id="submit-btn" type="submit" value="Bericht opvragen" class="btn btn-primary")
+
+script.
+    var msgbox = $('#msgbox');
+    var submitbtn = $('#submit-btn');
+    msgbox[0].addEventListener("keyup", function(event) {
+        if (msgbox[0].value.length === 0) {
+            submitbtn.removeClass('btn-danger');
+            submitbtn.addClass('btn-primary');
+            submitbtn[0].value = "Bericht opvragen";
+        }
+        else {
+            submitbtn.removeClass('btn-primary');
+            submitbtn.addClass('btn-danger');
+            submitbtn[0].value = "Bericht versturen";
+        }
+    });

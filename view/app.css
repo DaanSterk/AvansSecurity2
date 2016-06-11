@@ -1,0 +1,20 @@
+#form {
+    margin-top: 100px;
+}
+
+textarea {
+    resize: none;
+}
+
+.input-group {
+    width: 50%;
+    margin: 10px 0px;
+}
+
+.input-group-addon {
+    width: 120px;
+}
+
+.height-80px {
+    height: 80px !important;
+}

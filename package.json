@@ -1,0 +1,20 @@
+{
+  "name": "sec2-encrypt",
+  "version": "1.0.0",
+  "description": "Avans Hogeschool Security 2 opdracht",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Daan Sterk",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "cryptr": "^2.0.0",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "mongoose": "^4.4.20"
+  }
+}
